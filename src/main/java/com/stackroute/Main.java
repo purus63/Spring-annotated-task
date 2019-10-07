@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -18,11 +19,12 @@ public class Main
         System.out.println("Application Context");
         ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
         Movie m1= factory.getBean("MovieA",Movie.class);
-        Movie m2= factory.getBean("MovieB",Movie.class);
 
         m1.display();
-        m2.display();
 
+        BeanLifecycleDemoBean beanlife= factory.getBean(BeanLifecycleDemoBean.class);
+        beanlife.CustomInit();
+        beanlife.customDestroy();
 
 
 //        System.out.println("AnnotedBeanDefinitionReader");
