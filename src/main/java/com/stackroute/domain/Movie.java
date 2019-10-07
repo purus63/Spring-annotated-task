@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Movie {
 
-    @Autowired
     private Actor act;
 
-    public Movie() {
+    public Movie(Actor act) {
+        this.act=act;
     }
 
 

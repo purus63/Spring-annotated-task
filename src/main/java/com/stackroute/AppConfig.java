@@ -12,12 +12,16 @@ public class AppConfig {
     @Bean
     public Movie movie()
     {
-            return new Movie();
+            return new Movie(ActorObj());
     }
 
     @Bean
     public Actor ActorObj(){
-            return new Actor("ram","male",42);
+        Actor act=new Actor();
+        act.setName("Ram");
+        act.setGender("Male");
+        act.setAge(18);
+        return  act;
     }
 
 
