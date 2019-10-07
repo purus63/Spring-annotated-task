@@ -11,21 +11,25 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
 
-    @Bean(name={"MovieA","MovieB"})
-    @Scope("prototype")
+    @Bean(name={"MovieA"})
     public Movie movie()
     {
-            return new Movie(ActorObj());
+            return new Movie();
     }
 
+    @Bean(name={"MovieB"})
+    public Movie movie1()
+    {
+        return new Movie(ActorObj1());
+    }
 
-    @Bean
+    @Bean(name="actor")
     public Actor ActorObj(){
         return new Actor("Goma","Female",24);
     }
 
     @Bean
     public Actor ActorObj1(){
-        return new Actor("Goma","Female",24);
+        return new Actor("Maya","Female",24);
     }
 }

@@ -19,8 +19,9 @@ public class Main
         ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
         Movie m1= factory.getBean("MovieA",Movie.class);
         Movie m2= factory.getBean("MovieB",Movie.class);
+
         m1.display();
-        System.out.println(m1==m2);
+        m2.display();
 
 
 
