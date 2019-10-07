@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,5 +37,9 @@ public class AppConfig {
     @Bean
     public BeanLifecycleDemoBean blcdb(){
         return new BeanLifecycleDemoBean();
+    }
+    @Bean
+    public BeanPostProcessorDemoBean bppdb(){
+        return new BeanPostProcessorDemoBean();
     }
 }

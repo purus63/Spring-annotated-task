@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -26,6 +27,7 @@ public class Main
         beanlife.CustomInit();
         beanlife.customDestroy();
 
+        BeanPostProcessorDemoBean bppdb = (BeanPostProcessorDemoBean) factory.getBean("bppdb");
 
 //        System.out.println("AnnotedBeanDefinitionReader");
 //        GenericApplicationContext bf = new GenericApplicationContext();
